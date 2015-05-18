@@ -9,12 +9,14 @@
 import os, sys, shutil, filecmp
 
 def replacefiles(srcdir, dstdir, fn):
-    if fn=='build' or fn=='Pods' or fn.endswith('.tmp'):
+    if fn=='build' or fn=='Pods' or fn.endswith('.tmp') or fn=='package-info.java':
         return
     srcfile = os.path.join(srcdir, fn)
     dstfile = os.path.join(dstdir, fn.lower())
     if os.path.isfile(dstfile) and os.path.exists(dstfile) \
-        and (fn.endswith('.cpp') or fn.endswith('.h') or fn.endswith('.mm') or fn.endswith('.m')) \
+        and (fn.endswith('.cpp') or fn.endswith('.h') \
+             or fn.endswith('.mm') or fn.endswith('.m') \
+             or fn.endswith('.java') or fn.endswith('.xml') or fn.endswith('.cs')) \
         and not filecmp.cmp(srcfile, dstfile):
         os.remove(dstfile)
         shutil.copy(srcfile, os.path.join(dstdir, fn))
@@ -42,7 +44,9 @@ if __name__=="__main__":
         syncdir(os.path.abspath('../../vgcore/core'), os.path.abspath('.'))
         syncdir(os.path.abspath('../../vgios'), os.path.abspath('../ios'))
         syncdir(os.path.abspath('../../vgandroid'), os.path.abspath('../android'))
+        syncdir(os.path.abspath('../../vgwpf'), os.path.abspath('../wpf'))
     else:
         syncdir(os.path.abspath('.'), os.path.abspath('../../vgcore/core'))
         syncdir(os.path.abspath('../ios'), os.path.abspath('../../vgios'))
         syncdir(os.path.abspath('../android'), os.path.abspath('../../vgandroid'))
+        syncdir(os.path.abspath('../wpf'), os.path.abspath('../../vgwpf'))

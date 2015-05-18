@@ -6449,6 +6449,9 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCoreView_kMgNotShowSnap_get")]
   public static extern int MgCoreView_kMgNotShowSnap_get();
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCoreView_kMgCanAddVertex_get")]
+  public static extern int MgCoreView_kMgCanAddVertex_get();
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_MgCoreView")]
   public static extern void delete_MgCoreView(global::System.Runtime.InteropServices.HandleRef jarg1);
 

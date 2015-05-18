@@ -35310,6 +35310,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_MgCoreView_kMgNotShowSnap_get() {
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_MgCoreView_kMgCanAddVertex_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)MgCoreView::kMgCanAddVertex;
+  jresult = (int)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_delete_MgCoreView(void * jarg1) {
   MgCoreView *arg1 = (MgCoreView *) 0 ;
   

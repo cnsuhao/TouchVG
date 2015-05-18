@@ -40,7 +40,7 @@ import android.widget.ImageView;
 //! Android绘图视图辅助类
 public class ViewHelperImpl implements IViewHelper {
     private static final String TAG = "touchvg";
-    private static final int JARVERSION = 32;
+    private static final int JARVERSION = 33;
     private ViewCreator mCreator = new ViewCreator();
 
     static {
@@ -714,7 +714,12 @@ public class ViewHelperImpl implements IViewHelper {
 
     @Override
     public void clearShapes() {
-        ContextHelper.clearShapes(mCreator);
+        ContextHelper.clearShapes(mCreator, true);
+    }
+
+    @Override
+    public void clearShapes(boolean showMessage) {
+        ContextHelper.clearShapes(mCreator, showMessage);
     }
 
     @Override
